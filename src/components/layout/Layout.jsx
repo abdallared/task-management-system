@@ -3,6 +3,7 @@ import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import OfflineSyncIndicator from '../sync/OfflineSyncIndicator'
+import InstallPrompt from '../pwa/InstallPrompt'
 import { KeyboardShortcutsHelp } from '../shortcuts/KeyboardShortcutsHelp'
 import { CommandPalette } from '../shortcuts/CommandPalette'
 import { useKeyboardShortcuts } from '../../hooks/useKeyboardShortcuts'
@@ -112,6 +113,9 @@ export default function Layout() {
 
       {/* Offline sync indicator */}
       <OfflineSyncIndicator />
+
+      {/* PWA Install prompt */}
+      <InstallPrompt />
 
       {/* Keyboard shortcut indicator - hidden on mobile */}
       {sequenceKeys.length > 0 && (
