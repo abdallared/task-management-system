@@ -2,21 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>TaskFlow</title>
+  <title>TaskFlow - Redirecting...</title>
   <script>
     // GitHub Pages SPA redirect
-    // This script takes the current url and converts the path and query
-    // string into just a query string, and then redirects the browser
-    // to the new url with only a query string and hash fragment
-    (function() {
-      var redirect = sessionStorage.redirect;
-      delete sessionStorage.redirect;
-      if (redirect && redirect !== location.href) {
-        history.replaceState(null, null, redirect);
-      }
-    })();
+    // Store the path and redirect to index.html
+    sessionStorage.redirect = location.href;
+    location.replace(location.origin + location.pathname.split('/').slice(0, -1).join('/') + '/index.html' + 
+      (location.search || '') + (location.hash || ''));
   </script>
 </head>
 <body>
+  <p>Redirecting...</p>
 </body>
 </html>

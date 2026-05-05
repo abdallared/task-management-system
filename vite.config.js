@@ -8,6 +8,31 @@ const basePath = isGitHubPages ? '/task-management-system/' : '/'
 export default defineConfig({
   base: basePath,
   
+  // Build optimizations
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor code
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'supabase-vendor': ['@supabase/supabase-js'],
+          'ui-vendor': ['lucide-react', '@dnd-kit/core', '@dnd-kit/sortable', '@dnd-kit/utilities'],
+          'utils-vendor': ['date-fns', 'zod', 'zustand', '@tanstack/react-query']
+        }
+      }
+    },
+    // Optimize chunk size
+    chunkSizeWarningLimit: 1000,
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.logs in production
+        drop_debugger: true
+      }
+    }
+  },
+  
   plugins: [
     react(),
     VitePWA({
@@ -52,6 +77,8 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
         navigateFallback: null, // Disable for GitHub Pages
+        // Increase cache size limits
+        maximumFileSizeToCacheInBytes: 3000000, // 3MB
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/.*\.supabase\.co\/.*/i,
@@ -64,7 +91,8 @@ export default defineConfig({
               },
               cacheableResponse: {
                 statuses: [0, 200]
-              }
+              },
+              networkTimeoutSeconds: 10 // Fallback to cache after 10s
             }
           }
         ]
