@@ -91,7 +91,8 @@ export default function Navbar({ onMenuClick }) {
                       await signOut()
                       setShowUserMenu(false)
                       // Force a full page reload to clear all cached data
-                      window.location.href = '/login'
+                      // Use relative path to work with GitHub Pages base path
+                      window.location.href = import.meta.env.BASE_URL + 'login'
                     }}
                     className="w-full flex items-center space-x-2 px-4 py-3 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors touch-manipulation"
                   >

@@ -19,7 +19,8 @@ export default function LoginPage() {
     try {
       await signIn(email, password)
       // Force a full page reload to clear all cached data and show correct user content
-      window.location.href = '/dashboard'
+      // Use relative path to work with GitHub Pages base path
+      window.location.href = import.meta.env.BASE_URL + 'dashboard'
     } catch (err) {
       console.error('Login error:', err)
       setError(err.message || 'Failed to sign in')
