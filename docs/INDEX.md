@@ -73,7 +73,43 @@ Welcome to the complete documentation for TaskFlow task management system. This 
 - Real-time subscriptions
 - All-in-one reference document
 
-### 4. API Documentation
+### 4. Distributed Systems & Course Materials
+
+**[05-DISTRIBUTED-SYSTEMS.md](./05-DISTRIBUTED-SYSTEMS.md)** ⭐ **COMPREHENSIVE GUIDE**
+- Introduction: Definition & Characteristics of distributed systems
+- Design Goals: Resource sharing, distribution transparency, openness, scalability
+- Challenges & Pitfalls: Global clock, replication, false network assumptions
+- Types of Distributed Systems: HPC, DIS, Pervasive systems
+- Architectural Styles: Layered, Object-based, Service-oriented, Pub-Sub, Middleware
+- System Architectures: Centralized, Decentralized, Hybrid with diagrams
+- Real-World Examples: AWS S3, Azure, Google App Engine, Skype, BitTorrent
+- Implementation Analysis: TaskFlow's distributed system assessment
+- **Perfect for:** CS students, distributed systems courses, system design interviews
+
+**[06-DISTRIBUTED-PATTERNS.md](./06-DISTRIBUTED-PATTERNS.md)** ⭐ **PATTERNS & PRACTICES**
+- Communication Patterns: Request-Reply, Pub-Sub, Message Queues
+- Consistency Patterns: Strong, Eventual, Causal with code examples
+- Fault Tolerance Patterns: Retry, Circuit Breaker, Bulkhead
+- Performance Patterns: Caching, Pagination, Batch Processing
+- Security Patterns: RLS, JWT Authentication, Encryption
+- Scalability Patterns: Horizontal/Vertical scaling, Geographic distribution
+- Monitoring & Observability: Key metrics to track
+- **Perfect for:** Implementation, production readiness, problem-solving
+
+**[07-DISTRIBUTED-QUICK-REFERENCE.md](./07-DISTRIBUTED-QUICK-REFERENCE.md)** ⭐ **QUICK LOOKUP**
+- Core concepts at a glance
+- Design goals checklist
+- Challenge solutions matrix
+- Architecture styles summary
+- Decision trees for pattern selection
+- Real-world examples mapping
+- Failure scenarios & responses
+- Performance metrics guide
+- Deployment checklist
+- Interview Q&A (30+ questions)
+- **Perfect for:** Quick lookup, exam prep, interviews, decision-making
+
+### 5. API Documentation
 
 **[API-EXAMPLES.md](./API-EXAMPLES.md)** ⭐ **CODE EXAMPLES**
 - Authentication examples
@@ -133,6 +169,32 @@ Welcome to the complete documentation for TaskFlow task management system. This 
 2. [Summary](./SUMMARY.md) - Quick facts
 3. [SRS - Success Metrics](./02-SRS.md#7-system-features)
 
+### For CS Students & Distributed Systems Course 👨‍🎓
+
+**Learning Path:**
+1. **Start Here:** [Distributed Systems Quick Reference](./07-DISTRIBUTED-QUICK-REFERENCE.md)
+   - Concepts overview, decision trees, interview Q&A
+   - 20-30 minutes to grasp fundamentals
+
+2. **Deep Dive:** [Comprehensive Distributed Systems Guide](./05-DISTRIBUTED-SYSTEMS.md)
+   - Course-aligned topics, detailed explanations, real-world examples
+   - 2-3 hours for complete understanding
+
+3. **Implementation:** [Patterns & Best Practices](./06-DISTRIBUTED-PATTERNS.md)
+   - Practical code examples, production patterns, trade-offs
+   - Learn how concepts apply to real systems
+
+4. **System Design:** [Architecture Documentation](./03-ARCHITECTURE.md)
+   - See how TaskFlow implements distributed systems principles
+   - Multi-tier architecture, real-time features, scalability
+
+**Use Cases:**
+- Assignment: Design a distributed system (Reference 05 & 06)
+- Exam prep: Study 07 for quick review
+- System design interview: Use 07 for frameworks
+- Project: Implement patterns from 06 in your code
+- Compare: See alternatives in 05, Section: System Architectures
+
 ---
 
 ## 📋 Documentation by Topic
@@ -172,6 +234,28 @@ Welcome to the complete documentation for TaskFlow task management system. This 
 - [Architecture - Scalability](./03-ARCHITECTURE.md#6-scalability--performance)
 - [Database ERD - Performance](./DATABASE-ERD.md#performance-considerations)
 - [SRS - Performance Requirements](./02-SRS.md#41-performance-nfr-perf)
+
+### Distributed Systems & Architecture
+- [Comprehensive Guide](./05-DISTRIBUTED-SYSTEMS.md) - Design goals, types, architectural styles
+- [Patterns & Practices](./06-DISTRIBUTED-PATTERNS.md) - Communication, consistency, fault tolerance
+- [Quick Reference](./07-DISTRIBUTED-QUICK-REFERENCE.md) - Quick lookup, interview prep
+- [Architecture - System Design](./03-ARCHITECTURE.md) - How TaskFlow implements these concepts
+- **Topics Covered:** Consistency models, CAP theorem, replication, synchronization, network challenges
+
+### Communication & Real-time
+- [Distributed Patterns - Communication](./06-DISTRIBUTED-PATTERNS.md#communication-patterns)
+- [API Examples - Real-time](./API-EXAMPLES.md#real-time-subscriptions)
+- [Distributed Patterns - Pub-Sub](./06-DISTRIBUTED-PATTERNS.md#2-publish-subscribe-asynchronous-events)
+
+### Fault Tolerance & Reliability
+- [Distributed Patterns - Fault Tolerance](./06-DISTRIBUTED-PATTERNS.md#fault-tolerance-patterns)
+- [Quick Reference - Failures](./07-DISTRIBUTED-QUICK-REFERENCE.md#failure-scenarios--responses)
+- [Architecture - Security & Resilience](./03-ARCHITECTURE.md#4-security-architecture)
+
+### Consistency & Data Integrity
+- [Distributed Patterns - Consistency](./06-DISTRIBUTED-PATTERNS.md#consistency-patterns)
+- [Distributed Systems - Replication](./05-DISTRIBUTED-SYSTEMS.md#2-replication-inconsistencies)
+- [Complete Docs - RLS](./COMPLETE-DOCUMENTATION.md#row-level-security-rls-policies)
 
 ---
 
