@@ -2,10 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+const basePath = isGitHubPages ? '/task-management-system/' : '/'
+
 export default defineConfig({
-  // GitHub Pages deployment base path
-  // Repository name: task-management-system
-  base: process.env.GITHUB_PAGES === 'true' ? '/task-management-system/' : '/',
+  base: basePath,
   
   plugins: [
     react(),
@@ -19,8 +20,8 @@ export default defineConfig({
         theme_color: '#3b82f6',
         background_color: '#ffffff',
         display: 'standalone',
-        scope: '/',
-        start_url: '/',
+        scope: basePath,
+        start_url: basePath,
         icons: [
           {
             src: 'pwa-192x192.png',

@@ -23,6 +23,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute'
 
 function App() {
   const { setUser, setSession } = useAuthStore()
+  const routerBase = import.meta.env.BASE_URL
 
   useEffect(() => {
     // Get initial session
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={routerBase}>
         <Routes>
           {/* Public routes */}
           <Route path="/login" element={<LoginPage />} />

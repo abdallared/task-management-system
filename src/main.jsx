@@ -5,6 +5,13 @@ import App from './App'
 import './index.css'
 import { registerServiceWorker } from './registerSW'
 
+const redirectPath = sessionStorage.getItem('redirect')
+
+if (redirectPath) {
+  sessionStorage.removeItem('redirect')
+  window.history.replaceState({}, '', redirectPath)
+}
+
 // Create a client
 const queryClient = new QueryClient({
   defaultOptions: {
