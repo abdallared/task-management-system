@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+    
+    <!-- Prevent aggressive caching on mobile -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
     <meta name="description" content="TaskFlow - Collaborative Task Management System" />
     <meta name="theme-color" content="#3b82f6" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -19,11 +25,22 @@
     
     <!-- GitHub Pages SPA redirect script -->
     <script>
+      // Restore the URL after redirect from 404.html
       (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
+        var redirect = sessionStorage.getItem('redirect');
+        sessionStorage.removeItem('redirect');
+        
         if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
+          // Extract the path from the stored redirect URL
+          var redirectUrl = new URL(redirect);
+          var currentUrl = new URL(location.href);
+          
+          // Only redirect if the paths are different
+          if (redirectUrl.pathname !== currentUrl.pathname || 
+              redirectUrl.search !== currentUrl.search || 
+              redirectUrl.hash !== currentUrl.hash) {
+            history.replaceState(null, null, redirectUrl.pathname + redirectUrl.search + redirectUrl.hash);
+          }
         }
       })();
     </script>
