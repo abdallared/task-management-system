@@ -1,0 +1,49 @@
+===========================================
+  DEPLOY TASKFLOW TO GITHUB PAGES
+===========================================
+
+STEP 1: Create GitHub Repository
+---------------------------------
+1. Go to: https://github.com/new
+2. Repository name: task-management-system
+3. Click "Create repository"
+
+STEP 2: Run These Commands
+---------------------------
+Copy and paste these commands one by one:
+
+git remote add origin https://github.com/YOUR-USERNAME/task-management-system.git
+git push -u origin main
+
+IMPORTANT: Replace YOUR-USERNAME with your GitHub username!
+
+Example:
+git remote add origin https://github.com/abdreda4444/task-management-system.git
+git push -u origin main
+
+STEP 3: Enable GitHub Pages
+----------------------------
+1. Go to your repository on GitHub
+2. Click "Settings"
+3. Click "Pages" (left sidebar)
+4. Source: Select "GitHub Actions"
+5. Click "Save"
+
+STEP 4: Wait for Deployment
+----------------------------
+1. Go to "Actions" tab
+2. Wait 2-3 minutes
+3. Green checkmark = Success!
+
+YOUR LIVE URL:
+--------------
+https://YOUR-USERNAME.github.io/task-management-system/
+
+Example:
+https://abdreda4444.github.io/task-management-system/
+
+===========================================
+  THAT'S IT! YOUR SITE WILL BE LIVE!
+===========================================
+
+For detailed instructions, see: DEPLOYMENT-INSTRUCTIONS.md
